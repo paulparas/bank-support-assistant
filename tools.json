@@ -1,0 +1,56 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_account_details",
+            "description": "Get the account details. Call this whenever you need to know the account details (for example, when a customer asks 'What is my account balance').\n\nExpected Response Format:\n{\n  \"account_number\": string,   // the customer's account number\n  \"balance\": number,          // current account balance\n  \"account_holder\": string,           // account holder\n  \"error\": string             // error message if any, empty string otherwise\n}",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "account_number": {
+                        "type": "string",
+                        "description": "The customer's account number. do not use 'default' and is required from user input"
+                    }
+                },
+                "required": ["account_number"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_transaction_details",
+            "description": "Get the transaction details. Call this whenever you need to know the transaction details, for example when a customer asks 'What are my recent transactions'",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "account_number": {
+                        "type": "string",
+                        "description": "The customer's account number. do not use 'default' and is required from user input"
+                    }
+                },
+                "required": ["account_number"],
+                "additionalProperties": false
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_credit_card_details",
+            "description": "Get the credit card details. Call this whenever you need to know the credit card details, for example when a customer asks 'What is my credit card limit'",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "credit_card_number": {
+                        "type": "string",
+                        "description": "The customer's credit card number. do not use 'default' and is required from user input"
+                    }
+                },
+                "required": ["credit_card_number"],
+                "additionalProperties": false
+            }
+        }
+    }
+]
